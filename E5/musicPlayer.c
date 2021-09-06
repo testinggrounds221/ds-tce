@@ -38,25 +38,5 @@ int main(int argc, char const* argv[])
 		}
 	}
 
-
-	// appendSong(ll, readSong());
-	// // appendSong(ll, readSong());
-	// // appendSong(ll, readSong());
-	// // appendSong(ll, readSong());
-
-
-	// traverse(ll);
-
-	// // dltPos(ll, 0);
-	// if (!getNode(ll, 22)) { printf("Nothing to delte"); }
-	// printf("\nDeleted Song -> \n");
-	// displaySong(*dltPos(ll, 0));
-	// traverse(ll);
-	// printf("\nDeleted Song -> \n");
-	// displaySong(*dltPos(ll, 2));
-	// traverse(ll);
-
-	// printf("\nProgram end\n");
-	// displaySong(*readSong());
 	return 0;
 }
