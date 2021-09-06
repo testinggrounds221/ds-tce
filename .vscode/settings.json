@@ -1,0 +1,11 @@
+{
+	"editor.defaultFormatter": "ms-vscode.cpptools",
+	"C_Cpp.formatting": "vcFormat",
+	"files.associations": {
+		"type_traits": "c",
+		"random": "cpp",
+		"iosfwd": "cpp",
+		"functional": "cpp"
+	},
+	"editor.bracketPairColorization.enabled": true
+}

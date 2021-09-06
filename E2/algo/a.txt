@@ -1,0 +1,25 @@
+transpose(matrix M):
+1.	START
+2.	trans <- New Empty Matrix
+3.	loop i for rows in M:
+		loop j for cols in M:
+			trans[i][j] = M[j][i]
+4.	END
+
+multiply(matrix M1, matrix M2):
+1. START
+2. mul <- New Empty Matrix
+3. loop i for rows of M1:
+	loop j for cols of M2:
+		loop k for Rows of M2:
+			sum <- sum + M1[i][k] + M1[k][j]
+		mul[i][j] <- sum
+		set sum as 0
+4. END
+
+trace(matrix M1):
+1.	START
+2.	trace <- 0
+3.	loop i for rows in M1:
+		add M1[i][i] to trace
+4.	return trace
