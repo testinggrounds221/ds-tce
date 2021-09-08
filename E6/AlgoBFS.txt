@@ -1,0 +1,15 @@
+BFS(int A[n][n],n,start):
+	1. START
+	2. visited[n] <- 0 array of length n
+	3. q <- empty queue of len n
+	4. enqueue(start)
+	5. visited[start] <- 1;
+	6. print start
+	7. loop until q not empty:
+		u <- dequeue()
+		loop v from 1 to n-1:
+			if u,v is a vertex and v is not visted:
+				visited[v] = 1
+				print v
+				enqueue(v)
+	8. END

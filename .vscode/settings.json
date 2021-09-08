@@ -5,7 +5,12 @@
 		"type_traits": "c",
 		"random": "cpp",
 		"iosfwd": "cpp",
-		"functional": "cpp"
+		"functional": "cpp",
+		"ll.h": "c",
+		"*.tcc": "c",
+		"string": "c",
+		"linearq.h": "c",
+		"cqueue.h": "c"
 	},
 	"editor.bracketPairColorization.enabled": true
 }

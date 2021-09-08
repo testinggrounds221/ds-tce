@@ -79,8 +79,6 @@ struct Song* dltHead(struct LL* ll) {
 	return x;
 }
 
-
-
 struct Song* dltNext(struct LL* ll, struct Node* dltNxt) { // Deletes Next Node
 	if (!dltNxt || !dltNxt->next) return emptySong;
 	struct Node* ptr = dltNxt->next;
