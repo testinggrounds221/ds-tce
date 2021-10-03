@@ -10,7 +10,6 @@ public:
 	Node* next;
 };
 
-
 class DoubleLL {
 public:
 	Node* head;
@@ -172,9 +171,10 @@ void create(int* A, int num, Node* head) {
 void traverse(Node* head) {
 	Node* ptr = head;
 	while (ptr != nullptr) {
-		cout << ptr->val << endl;
+		cout << ptr->val << " -> ";
 		ptr = ptr->next;
 	}
+	cout << "NULL" << endl;
 }
 
 Node* DoubleLL::findMiddlePointer() {
@@ -212,17 +212,17 @@ Node* DoubleLL::findIntersection(Node* head2) {
 }
 
 int main(int argc, char const* argv[]) {
-	int A[] = { 1,2,3,4,5,6,7,8,9,10,11,12 };
-	int B[] = { 1,2,3,4,5, };
+	int A[] = { 1,2,3,4,5,6,7,8,9,10,11,12,13 };
+	// int B[] = { 1,2,3,4,5, };
 
 	// int A[] = { 1 };
 	int n = sizeof(A) / sizeof(int);
 
 
 	DoubleLL dll(A, n);
-	DoubleLL dllB(B, sizeof(B) / sizeof(int));
-	dllB.head->next->next->next->next = dll.head->next->next;
-	cout << dll.findIntersection(dllB.head)->val << endl;
+	// DoubleLL dllB(B, sizeof(B) / sizeof(int));
+	// dllB.head->next->next->next->next = dll.head->next->next;
+	// cout << dll.findIntersection(dllB.head)->val << endl;
 	// dll.Insert(-1, 100);
 	// dll.insertHead(10);
 	// cout << "hey" << endl;
@@ -241,7 +241,9 @@ int main(int argc, char const* argv[]) {
 	// cout << "Deleted " << dll.Delete(0) << endl << endl;
 	// dll.ReverseList1();
 	// dll.Display();
-	cout << dll.findMiddlePointer()->val << endl;
+	cout << "Node Values are ";
+	traverse(dll.head);
+	cout << "The Middle Node value is " << dll.findMiddlePointer()->val << endl;
 	// Node* head1 = new Node;
 	// create(A, 9, head1);
 	// traverse(head1);

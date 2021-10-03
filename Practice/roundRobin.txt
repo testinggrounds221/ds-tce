@@ -1,0 +1,45 @@
+Start
+
+Step 1-> In function int turnarroundtime(int processes[], int n, int bt[], int wt[], int tat[])
+   Loop For i = 0 and i < n and i++
+      Set tat[i] = bt[i] + wt[i]
+   return 1
+
+Step 2-> In function int waitingtime(int processes[], int n, int bt[], int wt[], int quantum)
+Declare rem_bt[n]
+   Loop For i = 0 and i < n and i++
+      Set rem_bt[i] = bt[i]
+      Set t = 0
+   Loop While (1)
+      Set done = true
+   Loop For i = 0 and i < n and i++
+      If rem_bt[i] > 0 then,
+         Set done = false
+      If rem_bt[i] > quantum then,
+         Set t = t + quantum
+         Set rem_bt[i] = rem_bt[i] - quantum
+      Else
+         Set t = t + rem_bt[i]
+         Set wt[i] = t - bt[i]
+         Set rem_bt[i] = 0
+      If done == true then,
+   Break
+
+Step 3->In function int findavgTime(int processes[], int n, int bt[], int quantum)
+   Declare and initialize wt[n], tat[n], total_wt = 0, total_tat = 0
+   Call function waitingtime(processes, n, bt, wt, quantum)
+   Call function turnarroundtime(processes, n, bt, wt, tat)
+   Print "Processes Burst Time Waiting Time turnaround time "
+   Loop For i=0 and i<n and i++
+   Set total_wt = total_wt + wt[i]
+   Set total_tat = total_tat + tat[i]
+   Print the value i+1, bt[i], wt[i], tat[i]
+   Print "Average waiting time = total_wt / n
+   Print "Average turnaround time =total_tat / n
+
+Step 4-> In function int main()
+   Delcare and initialize processes[] = { 1, 2, 3}
+   Declare and initialize n = sizeof processes / sizeof processes[0]
+   Declare and initialize burst_time[] = {8, 6, 12}
+   Set quantum = 2
+   Call function findavgTime(processes, n, burst_time, quantum)

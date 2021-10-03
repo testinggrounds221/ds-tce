@@ -1,0 +1,30 @@
+addPoly(poly1, poly2):
+	temp <- Initial node of Resultant Polynomial
+	last1 <- pointer to poly1;
+	last2 <- pointer to poly2;
+	loop until poly1 reaches last1 or poly2 reaches last2:
+		r <- Empty Node 
+		If power of x of poly1 > power of x of poly2:
+			add node of poly1 to temp
+			poly1 = poly1->next
+
+		If power of x of poly1 < power of x of poly2:
+			add node of poly2 to temp
+			poly2 = poly2->next
+
+		If power of x of poly1 == power of x of poly2 &&
+		power of y of poly1 > power of y of poly2:
+			add node of poly1 to temp
+			poly1 = poly1->next
+
+		If power of x of poly1 == power of x of poly2:
+			power of y of poly1 < power of y of poly2:
+				add node of poly1 to temp
+				poly1 = poly1->next
+			power of y of poly1 > power of y of poly2:
+				add node of poly2 to temp
+				poly2 = poly2->next
+		Else:
+			add the sum of coefficient of poly1&poly2 to temp
+			poly2 = poly1->next
+			poly2 = poly2->next

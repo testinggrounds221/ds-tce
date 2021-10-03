@@ -10,7 +10,14 @@
 		"*.tcc": "c",
 		"string": "c",
 		"linearq.h": "c",
-		"cqueue.h": "c"
+		"cqueue.h": "c",
+		"stdlib.h": "c",
+		"stck.h": "c",
+		"valarray": "c",
+		"iostream": "c"
 	},
-	"editor.bracketPairColorization.enabled": true
+	// "editor.bracketPairColorization.enabled": true,
+	// "editor.quickSuggestionsDelay": 1000,
+	// "C_Cpp.errorSquiggles": "Disabled",
+	
 }
