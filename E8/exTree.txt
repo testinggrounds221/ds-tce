@@ -1,0 +1,14 @@
+create empty stack stk
+
+Iterate char through expression :
+	If char is operand:
+		create new node newN with char
+		push newN into stack
+	If char is operator:
+		create new node newN with char
+		newN->right = pop from stk
+		newN->left = pop from stk
+		push newN into stack
+
+etRoot = pop from stk
+inorderTraverse(etRoot)

@@ -1,57 +1,57 @@
 #include <string.h>
 #include "stck.h"
 
-int isOperator(char c) {
-	if (c == '+' || c == '-' ||
-		c == '*' || c == '/' ||
-		c == '^')
+int isOperator(char ch) {
+	if (ch == '+' || ch == '-' ||
+		ch == '*' || ch == '/' ||
+		ch == '^')
 		return 1;
 	return 0;
 }
 
-void inorder(struct expTree* t) {
-	if (t) {
-		inorder(t->left);
-		printf("%c ", t->value);
-		inorder(t->right);
+void traverseInorder(struct expTree* tree) {
+	if (tree) {
+		traverseInorder(tree->left);
+		printf("%c ", tree->value);
+		traverseInorder(tree->right);
 	}
 }
 
-struct expTree* newNode(char v) {
+struct expTree* emptyNode(char v) {
 	struct expTree* temp = (struct expTree*)(malloc(sizeof(struct expTree)));
 	temp->left = temp->right = NULL;
 	temp->value = v;
 	return temp;
 }
 
-struct expTree* constructTree(char postfix[]) {
+struct expTree* generateExpTree(char postfix[]) {
 	struct Stck* stk = createStck();
-	struct expTree* t, * t1, * t2;
+	struct expTree* subTree, * rightSubTree, * leftSubTree;
 	for (int i = 0; i < strlen(postfix); i++) {
 		if (!isOperator(postfix[i])) {
-			t = newNode(postfix[i]);
-			stkPush(stk, t);
+			subTree = emptyNode(postfix[i]);
+			stkPush(stk, subTree);
 		}
 		else {
-			t = newNode(postfix[i]);
-			t1 = stkTop(*stk);
+			subTree = emptyNode(postfix[i]);
+			rightSubTree = stkTop(*stk);
 			stkPop(stk);
-			t2 = stkTop(*stk);
+			leftSubTree = stkTop(*stk);
 			stkPop(stk);
-			t->right = t1;
-			t->left = t2;
-			stkPush(stk, t);
+			subTree->right = rightSubTree;
+			subTree->left = leftSubTree;
+			stkPush(stk, subTree);
 		}
 	}
-	t = stkTop(*stk);
+	subTree = stkTop(*stk);
 	stkPop(stk);
-	return t;
+	return subTree;
 }
 
 int main() {
-	char postfix[] = "ab+ef*g*-";
-	struct expTree* r = constructTree(postfix);
-	printf("infix expression is \n");
-	inorder(r);
+	char postfix[] = "xy^5z*/1+";
+	struct expTree* exTree = generateExpTree(postfix);
+	printf("Infix Expression for %s is \n", postfix);
+	traverseInorder(exTree);
 	return 0;
 }

@@ -1,0 +1,50 @@
+node* insertTerm(tree,key,value):
+	node nwNode = new node with key and value
+	node t = tree -> root
+	node r
+	while(t):
+		r <- t	
+		if ascii value of key > t-> key:
+			t = t->left
+		else if ascii value of key < t-> key:
+			t = t->right
+		else:
+			return null pointer
+
+	if ascii value of key > t-> key:
+		r->left = nwNode
+	if ascii value of key < t-> key:
+		r->right = nwNode
+	return nwNode
+
+node* delete(tree, node, key):
+	node* t = tree->root
+	node* p;
+	if node is null : return null
+	if node->left and node->right is null:
+		if node is tree->root:
+			tree->root = null
+		free node
+	if ascii value of key > t-> key:
+		p = delete(tree,t->left,key)
+	else if ascii value of key < t-> key:
+		p = delete(tree,t->right,key)
+	if height(node->left) > height(node->right):
+		node* q = inorderPredecessor(node->left)
+		node->key = key
+		node->value = value
+		p->left = delete(tree,t->left,key)
+	else:
+		node* q = inorderSuccessor(key)
+		node->key = key
+		node->value = value
+		p->right = delete(tree,t->right,key)
+	return node
+
+string search(node,key):
+	if ascii value of key > node-> key:
+		search node-> right
+	if ascii value of key < node-> key:
+		search node-> left
+	else return node->val
+

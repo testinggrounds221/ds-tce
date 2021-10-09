@@ -14,7 +14,8 @@
 		"stdlib.h": "c",
 		"stck.h": "c",
 		"valarray": "c",
-		"iostream": "c"
+		"iostream": "c",
+		"binsrchtree.h": "c"
 	},
 	// "editor.bracketPairColorization.enabled": true,
 	// "editor.quickSuggestionsDelay": 1000,
