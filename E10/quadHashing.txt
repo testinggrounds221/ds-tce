@@ -1,0 +1,39 @@
+Each entry of Hash table has:
+	data -> key,value
+	flag ->	true or false
+			- 0 - Not filled once
+			- 1 - Contains Element
+			- 2 - Element was there atleast once
+};
+
+int hashCode(key: int):
+	return key % 10
+
+void insert(key: int, value: int):
+	i = hashCode = hashCode(key)	
+	loop until flag is 1:
+		h = 0
+		if(H[i]->data->key == key): 
+			replace value
+			return
+		i = (i + (h * h)) % size
+		if i == hashCode :
+			Table Full
+			return
+		h++
+	H[i]->data = key,value
+	H[i]->flag = 1
+
+void deleteRecord(key: int):
+	i = hashCode = hashCode(key)
+	loop until flag is not 0:
+		h = 0
+		if H->[i]->flag == 1 H[i]->data->key == key:
+			H->[i]->flag = 2
+			delete data
+			return
+		i = (i + (h * h)) % size
+		if i == hashCode :
+			break
+			return
+		h++
