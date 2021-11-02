@@ -1,0 +1,13 @@
+1. Declare an array of a linked list with the hash table size.
+
+2. Initialize an array of a linked list to NULL.
+
+3. Find hash key.
+
+4. If chain[key] == NULL
+
+     Make chain[key] points to the key node.
+
+5. Otherwise(collision),
+
+     Insert the key node at the end of the chain[key].

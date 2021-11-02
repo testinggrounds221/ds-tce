@@ -1,0 +1,7 @@
+Generate Songs -	Schema for Songs - store - retrive
+Store after sort, search (filter), 
+
+Application name	Song DB
+API key	16660a9178d25cfe2746e2a11ded1a29
+Shared secret	55fad36325e8fac0fa2044f712be9b95
+Registered to	sivakshree02
