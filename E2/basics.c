@@ -65,7 +65,7 @@ void transpose(struct Matrix* trn, struct Matrix mtrx) {
 
 	for (int i = 0; i < trn->r; i++)
 	{
-		for (int j = 0; j < trn->c; j++) {
+		for (int j = 0; j < trn->c; j++) {	
 			*(trn->arr + i * trn->c + j) = *(mtrx.arr + j * mtrx.c + i);
 		}
 	}

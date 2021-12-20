@@ -15,8 +15,10 @@
 		"stck.h": "c",
 		"valarray": "c",
 		"iostream": "c",
-		"binsrchtree.h": "c"
+		"binsrchtree.h": "c",
+		"fileoperations.h": "c"
 	},
+	"C_Cpp.autocomplete": "Disabled",
 	// "editor.bracketPairColorization.enabled": true,
 	// "editor.quickSuggestionsDelay": 1000,
 	// "C_Cpp.errorSquiggles": "Disabled",

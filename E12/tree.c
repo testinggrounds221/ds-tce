@@ -17,5 +17,6 @@ struct Node {
 	struct Node* rchild;
 };
 
-
-
+void createRatingTree() {
+	
+}
